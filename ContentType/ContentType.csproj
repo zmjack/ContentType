@@ -9,7 +9,7 @@
     <Authors>zmjack</Authors>
     <Company>nstandard.net</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.7.0</Version>
+    <Version>0.8.0</Version>
     <Description>ContentType definitions for HTTP.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/zmjack/ContentType</RepositoryUrl>

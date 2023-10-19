@@ -27,6 +27,8 @@ public class MediaTypeTest
     [Fact]
     public void EnumTest()
     {
+        var types = MediaType.All.Select(x => x.MimeType.Split('/')[0]).Distinct().ToArray();
+
         Assert.Equal(new[]
         {
             new HttpMediaType(".jpeg", "JPEG images", "image/jpeg"),
@@ -38,4 +40,23 @@ public class MediaTypeTest
             HttpMediaType.OctetStream,
         }, from x in MediaType.EnumTypes("application/octet-stream") select x);
     }
+
+    [Fact]
+    public void TypesTest()
+    {
+        var audioTypes = MediaType.AudioTypes.ToArray();
+        var applicationTypes = MediaType.ApplicationTypes.ToArray();
+        var imageTypes = MediaType.ImageTypes.ToArray();
+        var videoTypes = MediaType.VideoTypes.ToArray();
+        var textTypes = MediaType.TextTypes.ToArray();
+        var fontTypes = MediaType.FontTypes.ToArray();
+
+        Assert.Equal(7, audioTypes.Count());
+        Assert.Equal(37, applicationTypes.Count());
+        Assert.Equal(10, imageTypes.Count());
+        Assert.Equal(8, videoTypes.Count());
+        Assert.Equal(8, textTypes.Count());
+        Assert.Equal(4, fontTypes.Count());
+    }
+
 }
