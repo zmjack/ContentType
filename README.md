@@ -30,7 +30,7 @@ Get **MediaTypes** from **MimeType**:
 var mediaTypes = MediaType.EnumTypes("image/jpeg");
 foreach(var mediaType in mediaTypes)
 {
-	Console.WriteLine(mediaType.Extension);
+    Console.WriteLine(mediaType.Extension);
 }
 ```
 
