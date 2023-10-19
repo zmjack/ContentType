@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0;net6.0;net7.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
+    <RootNamespace>ContentType</RootNamespace>
+    <Authors>zmjack</Authors>
+    <Company>nstandard.net</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.5.0</Version>
+    <Description>ContentType definitions for HTTP.</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/zmjack/ContentType</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/zmjack/ContentType</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Copyright © nstandard.net 2023</Copyright>
+    <PackageId>ContentType</PackageId>
+    <PackageTags>ContentType Mime Http</PackageTags>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="MediaType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MediaType.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MediaType.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MediaType.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

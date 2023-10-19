@@ -1,2 +1,2 @@
 # ContentType
-ContentType definition for HTTP.
+ContentType definitions for HTTP.
