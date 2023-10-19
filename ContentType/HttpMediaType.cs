@@ -9,7 +9,7 @@ public struct HttpMediaType(string extension, string kind, string mimeType)
     public string Kind { get; set; } = kind;
     public string MimeType { get; set; } = mimeType;
 
-    public static readonly HttpMediaType OctetStream = new("", "A body contains arbitrary binary data", "application/octet-stream");
+    public static readonly HttpMediaType OctetStream = new("", "Arbitrary binary data", "application/octet-stream");
 
     public override string ToString() => MimeType;
 }

@@ -24,3 +24,16 @@ Console.WriteLine(mediaType.MimeType);
 
 <br/>
 
+```csharp
+var mediaTypes = MediaType.EnumTypes("image/jpeg");
+foreach(var mediaType in mediaTypes)
+{
+	Console.WriteLine(mediaType.MimeType);
+}
+```
+
+> .jpeg<br/>
+>
+> .jpg
+
+<br/>

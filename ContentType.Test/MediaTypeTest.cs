@@ -3,7 +3,7 @@ namespace ContentType.Test;
 public class MediaTypeTest
 {
     [Fact]
-    public void Test1()
+    public void ParseTest()
     {
         Assert.Equal("application/msword", MediaType.Parse("application.doc").ToString());
         Assert.Equal("application/vnd.ms-excel", MediaType.Parse("application.xls").ToString());
@@ -22,5 +22,20 @@ public class MediaTypeTest
         Assert.Equal("image/bmp", MediaType.Parse("image.bmp").ToString());
 
         Assert.Equal("application/octet-stream", MediaType.Parse("unknown.xxx").ToString());
+    }
+
+    [Fact]
+    public void EnumTest()
+    {
+        Assert.Equal(new[]
+        {
+            new HttpMediaType(".jpeg", "JPEG images", "image/jpeg"),
+            new HttpMediaType(".jpg", "JPEG images", "image/jpeg"),
+        }, from x in MediaType.EnumTypes("image/jpeg") select x);
+
+        Assert.Equal(new[]
+        {
+            HttpMediaType.OctetStream,
+        }, from x in MediaType.EnumTypes("application/octet-stream") select x);
     }
 }
